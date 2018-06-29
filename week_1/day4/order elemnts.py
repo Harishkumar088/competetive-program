@@ -3,6 +3,8 @@ import unittest
 
 def contains(n, m):
     l=len(n)
+    if (l==0):
+	return False
     low=n[0]
     high=n[l-1]
     mid=n[l//2]
