@@ -1,0 +1,45 @@
+d={}
+d["a"]=".-"
+d["b"]="-..."
+d["c"] ="-.-."
+d["d"] ="-.."
+d["e"] ="."
+d["f"] ="..-."
+d["g"]="--."
+d["h"] ="...."
+d["i"] =".."
+d["j"]=".---"
+d["k"] ="-.-"
+d["l"]=".-.."
+d["m"] ="--"	
+d["n"]="-."
+d["o"] ="---"
+d["p"] =".--."
+d["q"]="--.-"
+d["r"]=".-."
+d["s"]="..."
+d["t"]="-"
+d["u"]="..-"
+d["v"]="...-"
+d["w"]=".--"
+d["x"]="-..-"
+d["y"]="-.--"
+d["z"]="--.."
+
+
+m=eval(input())
+lis=[]
+for i in m:
+	s=""
+	for j in i:
+		s=s+d[j]
+	lis.append(s)
+print(lis)
+
+di1={}
+transformation=0
+for i in lis:
+	if i not in di1:
+		di1[i]=1
+		transformation=transformation+1
+print(transformation)
