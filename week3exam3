@@ -1,0 +1,35 @@
+
+public class Solution {
+    public static int distance(int a, int b) {
+        int count = 0;
+        count = a ^ b;
+        int sum = 0;
+        int t = requiredbits(count);
+        int[] arr = new int[count];
+
+        for (int i = t - 1; i >= 0; i--)
+        {
+            arr[i] = count% 2;
+            count = count / 2;
+        }
+        for (int r = 0; r < t; r++)
+        {
+            if (arr[r] == 1)
+                sum++;
+        }
+        return sum;
+    }
+    public static int requiredbits(int w) {
+        int i = 0;
+        while ((2 << i) <= w)
+            i++;
+        i++;
+        return i;
+    }
+    public static void main(String args[]) throws Exception {
+
+        int x = 1, y = 4;
+        System.out.println(" distance  is " + distance(x, y));
+    }
+
+}
