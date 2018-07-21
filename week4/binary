@@ -1,1 +1,52 @@
 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+class Solution {
+    public  int binary(int n){
+        String rem="";
+        int k=0;
+        int array[]=new int[n];
+        while(n>0){
+            rem=rem+n%2;
+            n=n/2;
+        }
+
+//        System.out.println(rem+"HHHHHHHHH");
+
+
+        return count(rem);
+
+    }
+    public  int count(String str){
+        System.out.println(str+"fffffffffd55");
+
+        int max=0;
+        int count=0;
+
+        for (int i=0;i<str.length();i++){
+            if(str.charAt(i)=='1'){
+                count++;
+            }
+            else{
+                if(count>=max){
+                    max=count;
+                    count=0;
+                }
+            }
+        }
+        if( count>=max){
+            max=count;
+        }
+        return  max;
+
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        Solution sol=new Solution();
+        int count=sol.binary(num);
+        System.out.println(count);
+
+    }
+}
